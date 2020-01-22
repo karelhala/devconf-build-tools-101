@@ -59,7 +59,7 @@ const plugins = [
 ];
 
 export default [
-    ...['cjs', 'esm', ].map(env => ({
+    ...['cjs', 'esm'].map(env => ({
         input: {
             index: './src/index.js',
             ...fileMapper(components)
@@ -73,15 +73,18 @@ export default [
         external,
         plugins
     })),
-    {
-        input: './src/index.js',
+    ...Object.entries({
+        index: './src/index.js',
+        ...fileMapper(components)
+    }).map(([ key, input ]) => ({
+        input,
         output: {
-            file: './dist/umd/index.js',
+            file: `./dist/umd/${key}.js`,
             format: 'umd',
-            name,
+            name: `${name}-${key}`,
             globals
         },
         external,
         plugins
-    }
+    }))
 ];
