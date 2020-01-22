@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -7,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     optimization: {
         splitChunks: {
-          // include all types of chunks
           chunks: 'all'
         }
     },
@@ -27,17 +25,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks: [ 'main' ],
             title: 'Devconf 2020',
+            favicon: './public/favicon.ico',
             template: resolve(__dirname, './src/index.html')
         }),
         new HtmlWebpackPlugin({
             inject: false,
             title: 'Devconf 2020 - 404',
+            favicon: './public/favicon.ico',
             template: resolve(__dirname, './src/404.html'),
             filename: '404.html'
         }),
         new HtmlWebpackPlugin({
             chunks: [ 'login' ],
             title: 'Devconf 2020 - log me in',
+            favicon: './public/favicon.ico',
             template: resolve(__dirname, './src/index.html'),
             filename: 'login.html'
         }),
