@@ -4,8 +4,10 @@
   "description": "Devconf app to test and show build - parcel",
   "main": "dist/js/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development parcel src/index.html --port 8002 --no-source-maps",
-    "build": "cross-env NODE_ENV=production parcel build src/index.html src/login.html src/404.html --public-url / --no-source-maps",
+    "start:mui": "cross-env NODE_ENV=development parcel dogs/index.html --port 8002 --no-source-maps",
+    "build:mui": "cross-env NODE_ENV=production parcel build dogs/index.html src/login.html src/404.html --public-url / --no-source-maps -d dist/mui",
+    "start:pf": "cross-env NODE_ENV=development parcel pf-app/index.html --port 8002 --no-source-maps",
+    "build:pf": "cross-env NODE_ENV=production parcel build pf-app/index.html src/login.html src/404.html --public-url / --no-source-maps -d dist/pf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +21,9 @@
   },
   "homepage": "https://github.com/karelhala/devconf-build-tools-101#readme",
   "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/styles": "^4.8.2",
     "@patternfly/patternfly": "^2.50.1",
     "@patternfly/react-core": "^3.129.3",
     "@patternfly/react-icons": "^3.14.34",

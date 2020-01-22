@@ -11,7 +11,15 @@ Server running at http://localhost:8002
 ✨  Built in 2.85s.
 ```
 
-### Build
+### Build Mui
+```shell
+✨  Built in 5.88s.
+
+dist/mui/dogs.f60c044e.js    390.6 KB    5.72s
+dist/mui/index.html             313 B      4ms
+```
+
+### Build PF4
 
 ```shell
 ✨  Built in 22.89s.
