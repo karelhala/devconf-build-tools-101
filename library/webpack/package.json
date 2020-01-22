@@ -4,6 +4,7 @@
   "description": "Devconf library to test and show build - webpack",
   "main": "dist/esm/index.js",
   "scripts": {
+      
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -7,8 +7,20 @@ import nodeGlobals from 'rollup-plugin-node-globals';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import analyze from 'rollup-plugin-analyzer';
 import { dependencies, name } from './package.json';
+import { readdirSync } from 'fs';
+
+const components = './src/components';
+
+const getDirectories = source =>
+  readdirSync(source, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+
+const fileMapper = (subDir) => getDirectories(subDir).reduce((acc, dir) => ({
+    ...acc, [dir]: `${subDir}/${dir}/index.js`
+}), {});
 
 const external = Object.keys(dependencies);
 
@@ -42,38 +54,34 @@ const plugins = [
     postcss({
         inject: true
     }),
-    sizeSnapshot({ snapshotPath: './size-snapshot.json' }),
+    analyze({ summaryOnly: true }),
     json()
 ];
 
-export default [{
-    input: './src/index.js',
-    output: {
-        file: './dist/umd/index.js',
-        format: 'umd',
-        name,
-        globals
-    },
-    external,
-    plugins
-}, {
-    input: './src/index.js',
-    output: {
-        file: './dist/cjs/index.js',
-        format: 'cjs',
-        name,
-        globals
-    },
-    external,
-    plugins
-}, {
-    input: './src/index.js',
-    output: {
-        file: './dist/esm/index.js',
-        format: 'esm',
-        name,
-        globals
-    },
-    external,
-    plugins
-}];
+export default [
+    ...['cjs', 'esm', ].map(env => ({
+        input: {
+            index: './src/index.js',
+            ...fileMapper(components)
+        },
+        output: {
+            dir: `./dist/${env}`,
+            format: env,
+            name,
+            globals
+        },
+        external,
+        plugins
+    })),
+    {
+        input: './src/index.js',
+        output: {
+            file: './dist/umd/index.js',
+            format: 'umd',
+            name,
+            globals
+        },
+        external,
+        plugins
+    }
+];

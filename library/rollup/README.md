@@ -1,31 +1,68 @@
 ```
-/src/index.js → ./dist/umd/index.js...
+./src/index.js, ./src/components/SomeCmp/index.js → ./dist/cjs...
+-----------------------------
+Rollup File Analysis
+-----------------------------
+bundle size:    137 Bytes
+original size:  378 Bytes
+code reduction: 63.76 %
+module count:   5
 
-Computed sizes of "dist/umd/index.js" with "umd" format
-  bundler parsing size: 556 B
-  browser parsing size (minified with terser): 548 B
-  download size (minified and gzipped): 340 B
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/SomeCmp.js
+██████████████████████████████████████░░░░░░░░░░░░ 77.37 % (106 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/config.js
+███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 22.63 % (31 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
 
-created ./dist/umd/index.js in 713ms
+created ./dist/cjs in 658ms
 
-./src/index.js → ./dist/cjs/index.js...
+./src/index.js, ./src/components/SomeCmp/index.js → ./dist/esm...
+-----------------------------
+Rollup File Analysis
+-----------------------------
+bundle size:    127 Bytes
+original size:  378 Bytes
+code reduction: 66.4 %
+module count:   5
 
-Computed sizes of "dist/cjs/index.js" with "cjs" format
-  bundler parsing size: 334 B
-  browser parsing size (minified with terser): 310 B
-  download size (minified and gzipped): 226 B
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/SomeCmp.js
+█████████████████████████████████████░░░░░░░░░░░░░ 75.59 % (96 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/config.js
+████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 24.41 % (31 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
 
-created ./dist/cjs/index.js in 174ms
+created ./dist/esm in 171ms
 
-./src/index.js → ./dist/esm/index.js...
+./src/index.js → ./dist/umd/index.js...
+-----------------------------
+Rollup File Analysis
+-----------------------------
+bundle size:    137 Bytes
+original size:  378 Bytes
+code reduction: 63.76 %
+module count:   5
 
-Computed sizes of "dist/esm/index.js" with "esm" format
-  bundler parsing size: 193 B
-  browser parsing size (minified with terser): 185 B
-  download size (minified and gzipped): 158 B
-  treeshaked with rollup with production NODE_ENV and minified: 45 B
-    import statements size of it: 45 B
-  treeshaked with webpack in production mode: 1,062 B
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/SomeCmp.js
+██████████████████████████████████████░░░░░░░░░░░░ 77.37 % (106 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/config.js
+███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 22.63 % (31 Bytes)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/SomeCmp/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/components/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
+/home/khala/Documents/git/karelhala/devconf-build-tools-101/library/webpack/src/index.js
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0 % (0 Byte)
 
-created ./dist/esm/index.js in 598ms
+created ./dist/umd/index.js in 178ms
+
 ```
