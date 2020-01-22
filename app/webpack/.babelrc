@@ -21,6 +21,6 @@
       "@babel/plugin-proposal-object-rest-spread",
       "lodash"
     ],
-    "ignore": ["node_modules"],
+    "ignore": ["node_modules"]
 }
   
