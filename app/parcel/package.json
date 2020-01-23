@@ -5,9 +5,9 @@
   "main": "dist/js/index.js",
   "scripts": {
     "start:mui": "cross-env NODE_ENV=development parcel dogs/index.html --port 8002 --no-source-maps",
-    "build:mui": "cross-env NODE_ENV=production parcel build dogs/index.html src/login.html src/404.html --public-url / --no-source-maps -d dist/mui",
+    "build:mui": "cross-env NODE_ENV=production parcel build dogs/index.html --public-url / --no-source-maps -d dist/mui",
     "start:pf": "cross-env NODE_ENV=development parcel pf-app/index.html --port 8002 --no-source-maps",
-    "build:pf": "cross-env NODE_ENV=production parcel build pf-app/index.html src/login.html src/404.html --public-url / --no-source-maps -d dist/pf",
+    "build:pf": "cross-env NODE_ENV=production parcel build pf-app/index.html pf-app/login.html pf-app/404.html --public-url / --no-source-maps -d dist/pf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

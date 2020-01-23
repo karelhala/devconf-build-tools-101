@@ -1,3 +1,11 @@
+# Building a library with Webpack
+
+Webpack can build a CommonJS and/or UDM libraries.
+
+In this case `npm build` translates to `webpack -p` which loads the config using default name - [`./webpack.config.js`](./webpack.config.js).
+
+## Build output
+
 ```shell
 Version: webpack 4.41.5
 Child

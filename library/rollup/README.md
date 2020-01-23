@@ -1,3 +1,11 @@
+# Building a library with Rollup
+
+Rollup builds into CommonJS, ES Module, UDM:
+
+In this simple case `npm build` translates to `rollup -c `[`./rollup.config.js`](./rollup.config.js).
+
+## Build output
+
 ```
 ./src/index.js, ./src/components/OtherCmp/index.js, ./src/components/SomeCmp/index.js → ./dist/cjs...
 -----------------------------

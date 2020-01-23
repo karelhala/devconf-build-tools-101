@@ -1,17 +1,45 @@
-### Running
+# Building a web application with Parcel
 
-1) cold
+## Run a dev server
+
+Parcel can reuse you previously built bundles and doesn't need to start from scratch every time. This can greatly speed up the process.
+
+For Parcel the `npm start` is set to execute:
+
+```sh
+cross-env NODE_ENV=development parcel <TARGET_APP>/index.html --port 8002 --no-source-maps
+```
+
+### Cold start
+
 ```shell
-Server running at http://localhost:8002 
+Server running at http://localhost:8002
 ✨  Built in 24.26s.
 ```
-2) prebuilt
+
+### Prebuilt bundle
+
 ```shell
-Server running at http://localhost:8002 
+Server running at http://localhost:8002
 ✨  Built in 2.85s.
 ```
 
-### Build Mui
+## Building  a bundle
+
+Let's take a look on the bundle sizes. This greatly depends on how your dependencies were built. If the included library expect you to do tree shaking in it's content, you might end up with a oversized bundle.
+
+We've used two different UI frameworks, one that expects you to use tree shaking and another that wants its users to have as easy life as possible.
+
+In this case `npm build` command is expected to execute:
+
+```sh
+cross-env NODE_ENV=production parcel build <TARGET_APP>/index.html --public-url / --no-source-maps -d dist/<TARGET_APP>
+```
+
+The key difference is that for running the dev server we executed the `parcel` command, while for the actual build we executed `parcel build`.
+
+### Using Material-ui
+
 ```shell
 ✨  Built in 5.88s.
 
@@ -19,7 +47,7 @@ dist/mui/dogs.f60c044e.js    390.6 KB    5.72s
 dist/mui/index.html             313 B      4ms
 ```
 
-### Build PF4
+### Using PF4
 
 ```shell
 ✨  Built in 22.89s.
