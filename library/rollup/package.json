@@ -2,7 +2,8 @@
   "name": "@khala/build-tools-101-lib-rollup",
   "version": "0.0.1",
   "description": "Devconf library to test and show build - rollup",
-  "main": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
